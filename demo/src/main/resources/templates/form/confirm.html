@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>form/confirm</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+</head>
+<body>
+
+	<h1>confirm</h1>	  
+	
+	<!-- このコメントは、HTMLに表示される -->
+
+	<!--/* formクラスをControllerから渡しておくと、 $[form.<inputのname>]で、内容を表示できる */-->
+	<p th:text="${form.title}"></p>
+    <p th:text="${form.detail}"></p>
+
+	<!--/* th:object でControllerから受け取ったオブジェクト名を指定すると、
+		子要素内では、そのオブジェクトの名前を省略して記述できる
+	 */-->
+	<div th:object="${form}">
+		<p th:text="*{title}"></p>
+        <p th:text="*{detail}"></p>
+	</div>
+	
+	<form method="get" action="" th:action="@{/form}">
+		<input type="hidden" name="title" th:value="${form.title}">
+        <input type="hidden" name="detail" th:value="${form.detail}">
+		<input type="submit" value="入力画面へ戻る">
+	</form>
+	
+	
+	<form method="get" action="" th:action="@{/complete}">
+		<input type="hidden" name="title" th:value="${form.title}">
+        <input type="hidden" name="detail" th:value="${form.detail}">
+		<input type="submit" value="保存する">
+	</form>
+	
+</body>
+</html>

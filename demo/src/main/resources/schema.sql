@@ -1,5 +1,6 @@
-CREATE TABLE sample(
+CREATE TABLE task(
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    detail VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );

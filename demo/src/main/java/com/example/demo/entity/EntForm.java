@@ -5,7 +5,7 @@ public class EntForm {
   private Long id;
   private String title;
   private String detail;
-  private boolean done;
+  boolean done;
 
   public EntForm(){ }
 
