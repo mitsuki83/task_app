@@ -29,15 +29,15 @@ public class SampleDao {
 	
 	public void insertDb(EntForm entForm)
 	{
-		this.db.update("INSERT INTO task (title) VALUES( ? )", entForm.getTitle());
-    this.db.update("INSERT INTO task (detail) VALUES( ? )", entForm.getDetail());
+		this.db.update("INSERT INTO sample (name) VALUES( ? )", entForm.getTitle());
+    this.db.update("INSERT INTO sample (name) VALUES( ? )", entForm.getDetail());
 
 	}
 	
 	public List<EntForm> searchDb(){
 		// Sql でDBからデータを取得する（Map<String, Object>）
 		// SQLを作成(全件取得)
-		String sql = "SELECT * FROM task";
+		String sql = "SELECT * FROM sample";
 		// SQLを実行する
 		List<Map<String, Object>> resultDb1 = db.queryForList(sql);
 		
